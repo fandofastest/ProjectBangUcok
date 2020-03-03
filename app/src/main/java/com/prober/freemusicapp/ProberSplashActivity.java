@@ -279,7 +279,7 @@ public class ProberSplashActivity extends AppCompatActivity {
                             ads_sett = getParam.getJSONObject(i).getString("ads_sett");
                             availability = getParam.getJSONObject(i).getString("avail");
                             moving_link = getParam.getJSONObject(i).getString("linkps");
-                            sc ="8af436d1e78348ab09f81a99bf43485b"; //getParam.getJSONObject(i).getString("sckey");
+                           sc = getParam.getJSONObject(i).getString("sckey");
 
                             if (ads_sett.equals("fb")) {
                                 id_inter = getParam.getJSONObject(i).getString("fb_inter");
