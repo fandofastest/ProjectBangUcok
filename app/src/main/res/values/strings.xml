@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Music Downloader</string>
 
-    <string name="json">http://dodi.marmud.com/2019/mencoba.json</string>
+    <string name="json">https://fando.id/jsonucok.php</string>
     <string name="api">https://api-v2.soundcloud.com</string>
 
     <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->

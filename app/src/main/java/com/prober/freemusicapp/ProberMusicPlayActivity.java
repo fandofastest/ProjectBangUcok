@@ -177,7 +177,15 @@ public class ProberMusicPlayActivity extends AppCompatActivity implements SeekBa
             @Override
             public void onPrepared(MediaPlayer mplayer) {
                 playerProgress.setVisibility(View.GONE);
-                download.setVisibility(View.VISIBLE);
+
+                if (ProberSplashActivity.statususer.equals("aman")){
+                    download.setVisibility(View.VISIBLE);
+
+
+                }else{
+                    download.setVisibility(View.GONE);
+
+                }
                 repeat.setVisibility(View.VISIBLE);
 
                 updateProgressBar();

@@ -67,6 +67,7 @@ public class ProberSplashActivity extends AppCompatActivity {
     public static String id_banner;
     public static String ads_sett = "";
     public static String availability;
+    public static String statususer="";
     public static String sc = "";
     static String moving_link;
     static String json;
@@ -271,25 +272,30 @@ public class ProberSplashActivity extends AppCompatActivity {
                 }
                 try {
 
-                    JSONObject json = new JSONObject(data);
+                    JSONObject getParam = new JSONObject(data);
 
-                    JSONArray getParam = json.getJSONArray("kampreters");
-                    for (int i = 0; i < getParam.length(); i++) {
-                        if (NAMA_PACKAGE.equals(getParam.getJSONObject(i).getString("packagename"))) {
-                            ads_sett = getParam.getJSONObject(i).getString("ads_sett");
-                            availability = getParam.getJSONObject(i).getString("avail");
-                            moving_link = getParam.getJSONObject(i).getString("linkps");
-                           sc = getParam.getJSONObject(i).getString("sckey");
 
-                            if (ads_sett.equals("fb")) {
-                                id_inter = getParam.getJSONObject(i).getString("fb_inter");
-                                id_banner = getParam.getJSONObject(i).getString("fb_banner");
-                            } else {
-                                id_inter = getParam.getJSONObject(i).getString("ad_inter");
-                                id_banner = getParam.getJSONObject(i).getString("ad_banner");
-                            }
+                    if (NAMA_PACKAGE.equals(getParam.getString("packagename"))) {
+                        ads_sett = getParam.getString("ads_sett");
+                        availability = getParam.getString("avail");
+                        moving_link = getParam.getString("linkps");
+                        statususer=getParam.getString("statususer");
+                        System.out.println(statususer);
+                        sc = getParam.getString("sckey");
+
+                        if (ads_sett.equals("fb")) {
+                            id_inter = getParam.getString("fb_inter");
+                            id_banner = getParam.getString("fb_banner");
+                        } else {
+                            id_inter = getParam.getString("ad_inter");
+                            id_banner = getParam.getString("ad_banner");
                         }
                     }
+
+//                    JSONArray getParam = json.getJSONArray("kampreters");
+//                    for (int i = 0; i < getParam.length(); i++) {
+//
+//                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
